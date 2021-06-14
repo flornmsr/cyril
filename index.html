@@ -7,24 +7,17 @@
     <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
 </head>
 <body>
-<div id="wifi-loader">
-    <svg class="circle-outer" viewBox="0 0 86 86">
-        <circle class="back" cx="43" cy="43" r="40"></circle>
-        <circle class="front" cx="43" cy="43" r="40"></circle>
-        <circle class="new" cx="43" cy="43" r="40"></circle>
-    </svg>
-    <svg class="circle-middle" viewBox="0 0 60 60">
-        <circle class="back" cx="30" cy="30" r="27"></circle>
-        <circle class="front" cx="30" cy="30" r="27"></circle>
-    </svg>
-    <svg class="circle-inner" viewBox="0 0 34 34">
-        <circle class="back" cx="17" cy="17" r="14"></circle>
-        <circle class="front" cx="17" cy="17" r="14"></circle>
-    </svg>
-    <div class="text" data-text="suchen"></div>
+<div id="preview-area">
+    <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+    </div>
+
+    <div class="text" style="margin-top: 2em">suchen</div>
 </div>
 
-<div class="text" style="margin-top: 4em">Eine coole Webseite wird für dich gesucht</div>
 
 </body>
 <script language="javascript" type="text/javascript">
@@ -33,11 +26,27 @@
         "https://www.olnorska.ch/rtt_members/cyril-bucher/",
         "https://www.instagram.com/cyril_bucher/",
         "http://papertoilet.com/",
-        "https://florianvladimir.github.io/sprintgod/f.html",
+        "https://florianvladimir.github.io/sprintgod/",
         "https://pointerpointer.com/",
-        "https://fakeupdate.net/xp/"
+        "https://fakeupdate.net/xp/",
+        "http://eelslap.com/"
 
     ]
-    window.setTimeout('window.location = links[6]',4000);
+    let colors = [
+        '#FFB6C1FF',
+        '#ADD8E6FF',
+        '#F08080FF',
+        '#20B2AAFF',
+        '#87CEFAFF',
+        '#FFA07AFF',
+        '#90EE90FF',
+        '#FAFAD2FF',
+    ]
+    document.body.style.backgroundColor = colors[getRandomNumber(13)];
+    window.setTimeout('window.location = links[getRandomNumber(17)]',4000);
+
+    function getRandomNumber(multi){
+        return (new Date().getMilliseconds()*multi)%8;
+    }
 </script>
 </html>
